@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar } from "swiper";
+import { Navigation } from "swiper";
 import { tryGetPopularMovies } from "../../apiConfig";
 import Card from "../Card/Card.jsx";
 import styles from "./Carrousel.module.css";
@@ -8,8 +8,6 @@ import useWindowDimensions from "./hooks/useWindowDimensions";
 
 import "swiper/css";
 import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import "./Swiper.css";
 
 const Carrousel = ({ title = "Error" }) => {
@@ -39,10 +37,9 @@ const Carrousel = ({ title = "Error" }) => {
       <Swiper
         className={styles.carrousel}
         style={{ padding: "0 2rem" }}
-        modules={[Navigation, Scrollbar]}
+        modules={[Navigation]}
         spaceBetween={10}
         slidesPerView={8}
-        scrollbar={{ draggable: true }}
         navigation
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => console.log(swiper)}
