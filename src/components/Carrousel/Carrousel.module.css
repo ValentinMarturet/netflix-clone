@@ -1,0 +1,12 @@
+.carrousel {
+  margin: 0 0 2rem 0;
+  overflow: visible;
+}
+
+.carrousel_container {
+  overflow: hidden;
+  padding: 40px 0;
+}
+.title {
+  padding-left: 2rem;
+}

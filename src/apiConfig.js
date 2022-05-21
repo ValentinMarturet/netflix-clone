@@ -57,7 +57,7 @@ export const tryGetPopularMovies = async (page = 1) => {
     );
     return res.data.results;
   } catch (error) {
-    return [];
+    return error;
   }
 };
 

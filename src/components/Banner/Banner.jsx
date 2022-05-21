@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { tryGetPopularMovies } from "../../apiConfig";
+import styles from "./Banner.module.css";
+import { apiBuilder, apiQuality } from "../../apiConfig.js";
 
 const Banner = () => {
   const [movie, setMovie] = useState("");
@@ -10,25 +12,40 @@ const Banner = () => {
   };
 
   const getMovie = async () => {
-    const res = await tryGetPopularMovies();
-    if (res.length === 0) {
-      console.log("Error");
-    } else {
+    try {
+      const res = await tryGetPopularMovies();
       setMovie(res[getRandomInt(res.length)]);
+      setLoading(false);
+    } catch (error) {
+      console.log("Error", error);
+      setLoading(false);
     }
   };
   useEffect(() => {
     getMovie();
   }, []);
 
-  const img =
-    "https://image.tmdb.org/t/p/w1280/egoyMDLqCxzjnSrWOz50uLlJWmD.jpg";
+  const bannerImg = apiBuilder.tryGetPoster(
+    movie.backdrop_path,
+    apiQuality.backdropLarge
+  );
 
   return (
-    <div>
-      <h1 style={{ backgroundImage: `url(${img})`, height: "60vh" }}>
-        {movie.title}
-      </h1>
+    <div
+      className={styles.banner_container}
+      style={{
+        backgroundImage: `linear-gradient(
+          to top,
+          rgba(22, 22, 22, 1) 0%,
+          rgba(22, 22, 22, 0) 30%
+        ), url(${bannerImg})`,
+      }}
+    >
+      <div className={styles.content}>
+        <h1 className={styles.title}>{movie.title}</h1>
+        <p className={styles.overview}>{movie.overview}</p>
+        <button className={styles.inf_button}>More Info</button>
+      </div>
     </div>
   );
 };
