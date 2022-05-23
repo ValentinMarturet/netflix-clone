@@ -1,0 +1,42 @@
+.navigation {
+  display: flex;
+  width: 100%;
+  height: 68px;
+  position: fixed;
+  z-index: 10;
+  padding: 0px 1rem 0px 2rem;
+  transition: background 500ms;
+}
+
+.solidNav {
+  background: #161616;
+}
+.transparentNav {
+  background: linear-gradient(
+    to bottom,
+    rgba(22, 22, 22, 1) 0%,
+    rgba(22, 22, 22, 0) 100%
+  );
+}
+
+.navTextContainer {
+  margin-left: auto;
+  display: flex;
+}
+
+.navText {
+  height: 100%;
+  font-size: 1rem;
+  margin-left: 10px;
+  padding: 18px;
+  cursor: pointer;
+}
+
+.navText:hover {
+  text-decoration: underline;
+}
+
+.netflix_logo {
+  width: auto;
+  height: 100%;
+}

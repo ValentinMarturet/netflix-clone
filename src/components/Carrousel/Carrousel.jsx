@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
-import { tryGetPopularMovies } from "../../apiConfig";
+import useGetContent from "./hooks/useGetContent";
 import Card from "../Card/Card.jsx";
 import styles from "./Carrousel.module.css";
 import useWindowDimensions from "./hooks/useWindowDimensions";
@@ -10,26 +10,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./Swiper.css";
 
-const Carrousel = ({ title = "Error" }) => {
-  const [data, setData] = useState("");
-  const [loading, setLoading] = useState(true);
-
+const Carrousel = ({ title = "Error", entity }) => {
   const { width, height } = useWindowDimensions();
 
-  const getData = async () => {
-    try {
-      const res = await tryGetPopularMovies();
-      setData(res);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
+  const [data, loading] = useGetContent(entity);
 
   return (
     <div className={styles.carrousel_container}>
@@ -41,8 +25,6 @@ const Carrousel = ({ title = "Error" }) => {
         spaceBetween={10}
         slidesPerView={8}
         navigation
-        onSlideChange={() => console.log("slide change")}
-        onSwiper={(swiper) => console.log(swiper)}
       >
         {!loading &&
           data.map((element) => {
