@@ -83,4 +83,13 @@ export const apiBuilder = {
   tryGetPoster: (path, quality = apiQuality.posterLarge) => {
     return `${tmdb.imageUrl}${tmdb.quality[quality]}${path}`;
   },
+  tryGetRecomendations: async (entity, id, lang = "es") => {
+    const url = `${tmdb.urlBase}${tmdb.entity[entity]}${id}/recommendations${tmdb.apiKey}${tmdb.language[lang]}`;
+    try {
+      const res = await axios(url);
+      return res;
+    } catch (error) {
+      return error;
+    }
+  },
 };

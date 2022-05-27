@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "./Swiper.css";
 
-const Carrousel = ({ title = "Error", entity }) => {
+const Carrousel = ({ title = "Error", entity, handleSelect }) => {
   const { width, height } = useWindowDimensions();
 
   const [data, loading] = useGetContent(entity);
@@ -27,10 +27,14 @@ const Carrousel = ({ title = "Error", entity }) => {
         navigation
       >
         {!loading &&
-          data.map((element) => {
+          data.map((element, index) => {
             return (
               <SwiperSlide>
-                <Card key={element.id} content={element} />
+                <Card
+                  key={element.id}
+                  content={element}
+                  handleSelect={handleSelect}
+                />
               </SwiperSlide>
             );
           })}

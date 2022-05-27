@@ -9,5 +9,6 @@
   font-family: "CircularStd";
   src: local("CircularStd"),
     url("./fonts/circular-std-medium-500.ttf") format("truetype");
-  font-weight: 500;
+  /* src: local("CircularStd"), url("./fonts/Circular-Std.otf") format("truetype"); */
+  /* font-weight: 500; */
 }
