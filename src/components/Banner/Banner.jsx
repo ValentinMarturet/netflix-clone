@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { tryGetPopularMovies } from "../../apiConfig";
 import styles from "./Banner.module.css";
 import { apiBuilder, apiQuality } from "../../apiConfig.js";
+import InfoIcon from "../svgs/InfoIcon";
 
 const Banner = () => {
   const [movie, setMovie] = useState("");
@@ -44,7 +45,10 @@ const Banner = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>{movie.title}</h1>
         <p className={styles.overview}>{movie.overview}</p>
-        <button className={styles.inf_button}>More Info</button>
+        <button className={styles.inf_button}>
+          More Info
+          <InfoIcon clase={styles.inf_icon} />
+        </button>
       </div>
     </div>
   );
