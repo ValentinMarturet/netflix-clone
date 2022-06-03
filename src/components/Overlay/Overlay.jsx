@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Overlay.module.css";
 import { apiBuilder, apiQuality, apiEntity, tmdb } from "../../apiConfig";
-import Card from "../Card/Card";
+import SmallCard from "../SmallCard/SmallCard";
 import CloseIcon from "../svgs/CloseIcon";
 import axios from "axios";
 
@@ -118,9 +118,9 @@ const Overlay = ({ content, handleClose }) => {
           </div>
           {!similar.loading && similar.data[0] && (
             <div className={styles.similar}>
-              <Card content={similar.data[0]}></Card>
-              <Card content={similar.data[1]}></Card>
-              <Card content={similar.data[2]}></Card>
+              <SmallCard content={similar.data[0]}></SmallCard>
+              <SmallCard content={similar.data[1]}></SmallCard>
+              <SmallCard content={similar.data[2]}></SmallCard>
             </div>
           )}
           <button onClick={() => console.log(similar.data)}>recomenda</button>

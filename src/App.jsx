@@ -41,7 +41,7 @@ function App() {
         <Overlay handleClose={handleClose} content={selection.data} />
       )}
       <Navigation />
-      <Banner />
+      <Banner handleSelect={handleSelect} />
       <Carrousel
         title={"Popular Movies"}
         entity={apiEntity.popularMovies}

@@ -4,7 +4,7 @@ import styles from "./Banner.module.css";
 import { apiBuilder, apiQuality } from "../../apiConfig.js";
 import InfoIcon from "../svgs/InfoIcon";
 
-const Banner = () => {
+const Banner = ({ handleSelect }) => {
   const [movie, setMovie] = useState("");
   const [loading, setLoading] = useState(true);
 
@@ -45,7 +45,11 @@ const Banner = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>{movie.title}</h1>
         <p className={styles.overview}>{movie.overview}</p>
-        <button className={styles.inf_button}>
+        <button
+          className={styles.inf_button}
+          type="button"
+          onClick={() => handleSelect(movie)}
+        >
           More Info
           <InfoIcon clase={styles.inf_icon} />
         </button>

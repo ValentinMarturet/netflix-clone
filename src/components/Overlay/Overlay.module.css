@@ -6,20 +6,22 @@
   height: 100%; */
   z-index: 1000;
   backdrop-filter: drop-shadow(3px);
-  overflow-y: scroll;
+  overflow: scroll;
 }
 
 .overlay {
   background-color: #161616;
   margin: 2.5vh 25vw;
   width: 50vw;
-  height: 95vh;
-  min-height: 95vh;
+  height: 95%;
+
+  /* min-height: 95vh; */
   box-shadow: 0px 5px 20px 10px rgba(0, 0, 0, 0.3);
+  /* overflow: scroll; */
 }
 
 .header {
-  height: 50%;
+  height: 50vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,6 +32,11 @@
 
 .title {
   padding: 10px;
+  padding-left: 20px;
+}
+
+.title,
+.header {
 }
 
 .close {
@@ -45,9 +52,6 @@
   transition: 200ms;
 }
 
-.close {
-}
-
 .close:hover {
   color: rgba(230, 230, 230, 0.5);
 }
@@ -60,13 +64,13 @@
 
 .infoLeft {
   width: 60%;
-  padding: 0.5rem;
+  padding: 20px;
   /* background-color: pink; */
 }
 
 .infoRight {
   width: 40%;
-  padding: 0.5rem;
+  padding: 20px;
   /* background-color: aqua; */
 }
 
@@ -81,5 +85,4 @@
 }
 .similar > * {
   width: 200px;
-  padding: 1rem;
 }
