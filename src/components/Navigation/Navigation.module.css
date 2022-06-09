@@ -49,3 +49,48 @@
   width: auto;
   height: 100%;
 }
+
+.drop_down {
+  position: absolute;
+  right: 20px;
+  visibility: hidden;
+  background-color: #161616;
+  list-style: none;
+  text-align: right;
+  margin: 0;
+  padding: 0;
+  transition: visibility 500ms;
+}
+
+.drop_li {
+  cursor: pointer;
+  padding: 10px 15px;
+  transition: background-color 200ms;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile_icon {
+  /* box-sizing: content-box; */
+  height: 1rem;
+  margin-right: auto;
+}
+
+.drop_li:hover {
+  background-color: #6d6d6e;
+}
+
+.drop_down:hover {
+  visibility: visible;
+}
+.user_setting {
+  transition: background-color 200ms;
+}
+
+.user_setting:hover {
+  background-color: #6d6d6e78;
+}
+
+.user_setting:hover ul {
+  visibility: visible;
+}
