@@ -6,7 +6,7 @@
   height: 100%; */
   z-index: 1000;
   backdrop-filter: drop-shadow(3px);
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 
 .overlay {

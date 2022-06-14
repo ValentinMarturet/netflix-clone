@@ -1,11 +1,11 @@
 import { useEffect, useReducer, useState } from "react";
-import { apiEntity } from "./apiConfig";
-import { types } from "./types";
+import { apiEntity } from "../../apiConfig";
+import { types } from "../../types";
 import "./App.css";
-import Navigation from "./components/Navigation/Navigation";
-import Banner from "./components/Banner/Banner";
-import Carrousel from "./components/Carrousel/Carrousel";
-import Overlay from "./components/Overlay/Overlay";
+import Navigation from "../../components/Navigation/Navigation";
+import Banner from "../../components/Banner/Banner";
+import Carrousel from "../../components/Carrousel/Carrousel";
+import Overlay from "../../components/Overlay/Overlay";
 
 const initialState = {
   selection: false,

@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./Navigation.module.css";
 import netflix_logo from "../../images/Netflix_Logo.png";
 import useScrollPosition from "./hooks/useScrollPosition";
 import userUrl from "../../images/netflix-icon-users/user-peng.png";
 import ProfileIcon from "../svgs/ProfileIcon.jsx";
+import { AuthContext } from "../../auth/AuthContext";
 
 const Navigation = () => {
   const [scrollPosition] = useScrollPosition();
@@ -11,6 +12,13 @@ const Navigation = () => {
 
   const getRandomInt = (max) => {
     return Math.floor(Math.random() * max);
+  };
+
+  const auth = useContext(AuthContext);
+
+  const handleLogout = (e) => {
+    e.preventDefault();
+    auth.dispatch({ type: "LOGOUT" });
   };
 
   useEffect(() => {
@@ -35,7 +43,9 @@ const Navigation = () => {
               Profile
             </li>
             <hr style={{ borderColor: "#6d6d6e" }} />
-            <li className={styles.drop_li}>SingOut</li>
+            <li className={styles.drop_li} onClick={handleLogout}>
+              SingOut
+            </li>
           </ul>
         </div>
       </div>
