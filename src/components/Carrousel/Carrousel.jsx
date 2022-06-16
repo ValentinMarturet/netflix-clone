@@ -14,6 +14,19 @@ const Carrousel = ({ title = "Error", entity, handleSelect }) => {
   const { width, height } = useWindowDimensions();
 
   const [data, loading] = useGetContent(entity);
+  const [slides, setSlides] = useState(8);
+
+  useEffect(() => {
+    console.log(width);
+    // if (width < 720) {
+    //   setSlides(4);
+    // } else if (width < 1080) {
+    //   setSlides(6);
+    // } else {
+    //   setSlides(8);
+    // }
+    setSlides(Math.floor(width / 200));
+  }, [width]);
 
   return (
     <div className={styles.carrousel_container}>
@@ -23,7 +36,7 @@ const Carrousel = ({ title = "Error", entity, handleSelect }) => {
         style={{ padding: "0 2rem" }}
         modules={[Navigation]}
         spaceBetween={10}
-        slidesPerView={8}
+        slidesPerView={slides}
         navigation
       >
         {!loading &&

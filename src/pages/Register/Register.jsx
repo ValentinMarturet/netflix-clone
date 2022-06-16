@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../auth/AuthContext";
 import netflix_logo from "../../images/Netflix_Logo.png";
 import "./Register.css";
@@ -44,6 +44,9 @@ const Register = () => {
           value="Register"
           onClick={handleRegister}
         />
+        <Link className="back" to="/login">
+          Already haven an Acount?
+        </Link>
       </form>
     </div>
   );

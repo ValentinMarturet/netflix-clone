@@ -81,3 +81,14 @@ html {
 .login_register:hover {
   background-color: #292929;
 }
+
+.back {
+  color: #8c8c8c;
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.back:hover {
+  color: #fff;
+  text-decoration: underline;
+}

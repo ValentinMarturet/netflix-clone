@@ -22,7 +22,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/login"
+          path="/login/*"
           element={
             <PublicRoute>
               <Routes>
@@ -32,7 +32,7 @@ const AppRoutes = () => {
           }
         />
         <Route
-          path="/register"
+          path="/register/*"
           element={
             <PublicRoute>
               <Routes>

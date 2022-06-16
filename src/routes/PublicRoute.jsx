@@ -8,7 +8,7 @@ const PublicRoute = ({ children }) => {
   if (!context.state.isLogedIn) {
     return children;
   } else {
-    <Navigate to="/" />;
+    return <Navigate to="/" />;
   }
 };
 

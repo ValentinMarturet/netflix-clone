@@ -2,6 +2,14 @@ import React, { createContext, useReducer } from "react";
 
 export const AuthContext = createContext();
 
+const initialState = () => {
+  if (localStorage.getItem("authToken")) {
+    return { isLogedIn: JSON.parse(localStorage.getItem("authToken")) };
+  } else {
+    return { isLogedIn: false };
+  }
+};
+
 const reducer = (state, action) => {
   switch (action.type) {
     case "LOGIN":
@@ -16,7 +24,7 @@ const reducer = (state, action) => {
 };
 
 export const AuthProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, { isLogedIn: false });
+  const [state, dispatch] = useReducer(reducer, undefined, initialState);
 
   return (
     <AuthContext.Provider value={{ state, dispatch }}>
