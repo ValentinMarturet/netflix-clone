@@ -6,6 +6,7 @@ import Navigation from "../../components/Navigation/Navigation";
 import Banner from "../../components/Banner/Banner";
 import Carrousel from "../../components/Carrousel/Carrousel";
 import Overlay from "../../components/Overlay/Overlay";
+import Footer from "../../components/Footer/Footer";
 
 const initialState = {
   selection: false,
@@ -62,6 +63,7 @@ function App() {
         entity={apiEntity.topRatedTv}
         handleSelect={handleSelect}
       />
+      <Footer />
     </div>
   );
 }
