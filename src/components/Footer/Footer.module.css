@@ -12,6 +12,8 @@
 }
 
 a {
+  text-decoration: none;
+  color: #b3b3b3;
   padding: 0 20px;
   cursor: pointer;
   font-family: "Yantramanav", sans-serif;

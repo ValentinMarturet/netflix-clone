@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <span className={styles.footer_text}>
-        <a>Github</a>
+        <a
+          href="https://github.com/ValentinMarturet/netflix-clone"
+          target="_blank"
+        >
+          Github
+        </a>
         <a>LinkedIn</a>
         <a>Portafolio</a>
       </span>
