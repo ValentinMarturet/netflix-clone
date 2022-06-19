@@ -32,9 +32,16 @@ const Navigation = () => {
   return (
     <nav className={`${styles.navigation} ${navbar}`}>
       <img src={netflix_logo} className={styles.netflix_logo} />
-
+      <div className={styles.navText}>
+        <span className={styles.navrow}>Inicio</span>
+        <span className={styles.navrow}>Series</span>
+        <span className={styles.navrow}>Peliculas</span>
+        <span className={styles.navrow}>Novedades populares</span>
+        <span className={styles.navrow}>Mi lista</span>
+        <span className={styles.navrow}>Audio y Subtitulos</span>
+      </div>
       <div className={styles.navTextContainer}>
-        <div className={styles.navText}>ES</div>
+        {/* <div className={styles.navText}>ES</div> */}
         <div className={styles.user_setting}>
           <img src={userUrl} className={styles.navUser} />
           <ul className={styles.drop_down}>

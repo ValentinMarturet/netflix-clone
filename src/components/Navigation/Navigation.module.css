@@ -19,6 +19,19 @@
   );
 }
 
+.navrow {
+  font-family: "Yantramanav", sans-serif;
+  font-weight: 400;
+  margin-left: 20px;
+  padding: 3px;
+  box-sizing: content-box;
+  transition: color 200ms;
+}
+
+.navrow:hover {
+  color: #b3b3b3;
+}
+
 .navTextContainer {
   margin-left: auto;
   display: flex;
@@ -40,14 +53,10 @@
   cursor: pointer;
 }
 
-.navText:hover,
-.navUser {
-  text-decoration: underline;
-}
-
 .netflix_logo {
   width: auto;
   height: 100%;
+  cursor: pointer;
 }
 
 .drop_down {

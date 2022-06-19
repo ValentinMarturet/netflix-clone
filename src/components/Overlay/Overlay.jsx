@@ -123,8 +123,6 @@ const Overlay = ({ content, handleClose }) => {
               <SmallCard content={similar.data[2]}></SmallCard>
             </div>
           )}
-          {/* <button onClick={() => console.log(similar.data)}>recomenda</button>
-          <button onClick={() => console.log(details)}>Details</button> */}
         </div>
       )}
     </div>
